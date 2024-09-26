@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Dropdown = () => {
-  return (
-    <div>Dropdown</div>
+interface DropProps {
+    items: string[]
+    heading: string
+    onChange: (value: string) => void;
+}
+
+const Dropdown: React.FC<DropProps> = ({items, heading, onChange}) => {
+    const[value, setValue] = useState("")
+
+    function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
+        let item = event.target.value
+        setValue(item)
+        onChange(item)
+    }
+
+    return (
+    <div>
+        <label>{heading}</label>
+        <select value={value} onChange={handleChange}>
+        {items.map((item)=>(
+            <option key={item} value={item}>{item}</option>
+        ))}
+        </select>
+
+    </div>
   )
 }
 
