@@ -7,7 +7,7 @@ interface DropProps {
 }
 
 const Dropdown: React.FC<DropProps> = ({items, heading, onChange}) => {
-    const[value, setValue] = useState("")
+    const[value, setValue] = useState("");
 
     function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
         let item = event.target.value
@@ -19,6 +19,9 @@ const Dropdown: React.FC<DropProps> = ({items, heading, onChange}) => {
     <div>
         <label>{heading}</label>
         <select value={value} onChange={handleChange}>
+        <option value={""} disabled>
+            Select
+        </option>
         {items.map((item)=>(
             <option key={item} value={item}>{item}</option>
         ))}
