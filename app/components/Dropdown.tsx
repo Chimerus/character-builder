@@ -17,14 +17,14 @@ const Dropdown: React.FC<DropProps> = ({items, heading, onChange}) => {
 
     return (
     <div>
-        <label>{heading}</label>
-        <select value={value} onChange={handleChange}>
-        <option value={""} disabled>
-            Select
-        </option>
-        {items.map((item)=>(
-            <option key={item} value={item}>{item}</option>
-        ))}
+        <label>{heading} |</label>
+        <select value={value} onChange={handleChange} className='border border-black-600'>
+            <option value={""} disabled>
+                Select
+            </option>
+            {items.map((item)=>(
+                <option key={item} value={item}>{item}</option>
+            ))}
         </select>
 
     </div>

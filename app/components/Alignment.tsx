@@ -28,17 +28,20 @@ function Alignment({onSelectItem}: AlignProps) {
     }
 
     return (
-        <div className="grid grid-rows-3 grid-flow-col gap-4">
-            {lawChaos.map((code) => (
-                goodEvil.map((moral) => (
-                    <div 
-                        key={getAlign(code, moral)}
-                        onClick={()=>updateState(getAlign(code, moral))}
-                        className={getAlign(code, moral) == selected ? "alignm p-2 border border-indigo-600 active" : "alignm p-2 border border-indigo-600"}
-                    >{getAlign(code, moral)} </div>
-                ))
-            ))}
-        </div>
+        <>
+            <p>Select Alignment</p>
+            <div className="grid grid-rows-3 grid-flow-col gap-4">
+                {lawChaos.map((code) => (
+                    goodEvil.map((moral) => (
+                        <div 
+                            key={getAlign(code, moral)}
+                            onClick={()=>updateState(getAlign(code, moral))}
+                            className={getAlign(code, moral) == selected ? "alignm p-2 border border-indigo-600 active" : "alignm p-2 border border-indigo-600"}
+                        >{getAlign(code, moral)} </div>
+                    ))
+                ))}
+            </div>
+        </>
     );
 }
 export default Alignment;

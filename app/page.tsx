@@ -34,8 +34,8 @@ export default function Home() {
     <div className="grid grid-rows-3 items-center justify-items-center min-h-screen">
       <Header/>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Dropdown items={race} heading={"Select Race"} onChange={handleRace}></Dropdown>
-        <Dropdown items={klass} heading={"Select Class"} onChange={handleClass}></Dropdown>
+        <Dropdown items={race} heading={"Choose Race"} onChange={handleRace}></Dropdown>
+        <Dropdown items={klass} heading={"Choose Class"} onChange={handleClass}></Dropdown>
         <Alignment onSelectItem={handleAlignment}/>
         <p>Testing: {JSON.stringify(character)}</p>
       </main>
