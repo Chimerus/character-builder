@@ -25,3 +25,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.alignm.active {
+  color: white;
+  background: blue;
+}
