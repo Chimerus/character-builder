@@ -30,3 +30,13 @@ body {
   color: white;
   background: blue;
 }
+
+p {
+  color: green
+}
+p {
+  border: medium solid;
+}
+div {
+  color: black;
+}
